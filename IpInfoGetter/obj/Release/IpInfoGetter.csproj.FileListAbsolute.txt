@@ -1,0 +1,30 @@
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\bin\Release\Newtonsoft.Json.dll
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\bin\Release\Newtonsoft.Json.xml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\MainWindow.g.cs
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\App.g.cs
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\MainWindow.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\IpInfoGetter.Properties.Resources.resources
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\IpInfoGetter.csproj.GenerateResource.cache
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\IpInfoGetter.csproj.CoreCompileInputs.cache
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\IpInfoGetter.csproj.CopyComplete
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\IpInfoGetter.csprojAssemblyReference.cache
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\bin\Release\who is.exe.config
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\bin\Release\who is.exe
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\bin\Release\who is.pdb
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\bin\Release\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\bin\Release\ru\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\Pages\MainSettingsPage.g.cs
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\Pages\InformatonPage.g.cs
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\SettingsWindow.g.cs
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\who is_MarkupCompile.cache
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\who is_MarkupCompile.lref
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\App.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\Pages\MainSettingsPage.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\Pages\InformatonPage.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\SettingsWindow.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\who is.g.resources
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\who is.exe
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\who is.pdb
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\Dictionaries\MainStyles.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Release\Dictionaries\OtherStyles.baml

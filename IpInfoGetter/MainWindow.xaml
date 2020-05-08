@@ -1,0 +1,102 @@
+﻿<Window x:Class="IpInfoGetter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IpInfoGetter"
+        mc:Ignorable="d"
+        Title="" Height="270" Width="380" Background="#5F7D95" 
+        MinHeight="270" MinWidth="490" MaxHeight="270" MaxWidth="500"
+        WindowStyle="None"  ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen" >
+    <Window.Resources>
+        <local:TimeNow x:Key="TimeNOW" Timenow=""/>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="180*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="140*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.RowSpan="3">
+            <Rectangle Fill="#8ac0f2" MouseDown="Rectangle_MouseDown"/>
+
+            <Button Style="{StaticResource BigButtonsStyle}"
+                   VerticalAlignment="Top"
+                   Click="BtnMoreClick">
+                <ContentControl>
+                    <Image Source="Images\more.png"/>
+                </ContentControl>
+            </Button>
+            <Button Style="{StaticResource BigButtonsStyle}"
+                    VerticalAlignment="Bottom"                    
+                    Click="BtnSettingsClick" Grid.ColumnSpan="3">
+                <ContentControl>
+                    <Image Source="Images\settings.png"/>
+                </ContentControl>
+            </Button>
+
+        </Grid>
+        <Grid Grid.Column="1" Grid.ColumnSpan="2">
+            <Rectangle  Fill="#3f4e5c" MouseDown="Rectangle_MouseDown"/>
+            <Menu Margin="190,0,100,0" Background="{x:Null}"/>
+        </Grid>
+        <Grid Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Name="tBlockTime"
+                       Text="{Binding Timenow, Source={StaticResource TimeNOW}}"
+                       Style="{StaticResource ResourceKey=TblckTimeStyle}"/>
+            <Button Style="{StaticResource CollapseButtonStyle}"
+                    Click="BtnMinisizedWindowClick">
+                <ContentControl>
+                    <Image Source="Images/collapse.png"/>
+                </ContentControl>
+            </Button>
+            <Button Style="{StaticResource ExitButtonStyle}" 
+                    Click="BtnCloseWindowClick">
+                <ContentControl>
+                    <Image Source="Images\exit.png" Width="45"/>
+                </ContentControl>
+            </Button>
+        </Grid>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+            <Grid>
+                <TextBox Name="sourceTbox" Style="{StaticResource ResourceKey=BasicText}"
+                         Tag="Введите IPv4..."
+                         VerticalAlignment="Bottom"
+                         KeyDown="TextBox_KeyDown"
+                         Focusable="True">
+                </TextBox>
+                <Button Style="{StaticResource SearchButtonStyle}"
+                        Click="BtnSearchClick" 
+                        VerticalAlignment="Bottom" >
+                    <ContentControl>
+                        <Image Source="Images\search.png"/>
+                    </ContentControl>
+                </Button>
+
+            </Grid>
+
+
+            <Button Name="button" 
+                    Style="{StaticResource MyIpButtonStyle}"
+                    Click="BtnMyIPClick" 
+                    Content="{DynamicResource m_btnMyIp}"/>
+
+        </StackPanel>
+        <ListBox Name="information_list" Grid.Row="2" Grid.Column="1"          
+                 BorderBrush="Black" 
+                 Foreground="Black"
+                 FontWeight="Bold"
+                 FontSize="16"
+                 Margin="20,10,0,10"
+                 FontFamily="Bookman Old Style"
+                 HorizontalAlignment="Stretch"
+                 />
+    </Grid>
+</Window>
+    

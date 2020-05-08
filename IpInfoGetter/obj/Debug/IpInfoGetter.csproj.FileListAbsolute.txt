@@ -1,0 +1,34 @@
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\IpInfoGetter.csprojAssemblyReference.cache
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\MainWindow.g.cs
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\App.g.cs
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\MainWindow.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\IpInfoGetter.Properties.Resources.resources
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\IpInfoGetter.csproj.GenerateResource.cache
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\IpInfoGetter.csproj.CoreCompileInputs.cache
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\IpInfoGetter.csproj.CopyComplete
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\App.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\bin\Debug\ru\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\SettingsWindow.g.cs
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\SettingsWindow.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\Pages\InformatonPage.g.cs
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\Pages\InformatonPage.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\Pages\MainSettingsPage.g.cs
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\Pages\MainSettingsPage.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\Resources\lang.ru-RU.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\Resources\lang.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\Dictionaries\ComboBoxStyle.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\Dictionaries\TextDecorationStyles.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\Dictionaries\ButtonsStyles.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\Dictionaries\ImageButtonsStyles.baml
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\bin\Debug\Ip Info Getter.exe.config
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\bin\Debug\Ip Info Getter.exe
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\bin\Debug\Ip Info Getter.pdb
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\Ip Info Getter_MarkupCompile.cache
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\Ip Info Getter_MarkupCompile.lref
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\Ip Info Getter.g.resources
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\Ip Info Getter.exe
+C:\Users\zekabobs\source\repos\IpInfoGetter\IpInfoGetter\obj\Debug\Ip Info Getter.pdb
