@@ -84,7 +84,7 @@
 
             <Button Name="button" 
                     Style="{StaticResource MyIpButtonStyle}"
-                    Click="BtnMyIPClick" 
+                    Click="BtnMyIPClickAsync" 
                     Content="{DynamicResource m_btnMyIp}"/>
 
         </StackPanel>

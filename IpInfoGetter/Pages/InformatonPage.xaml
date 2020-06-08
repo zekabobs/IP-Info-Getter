@@ -13,10 +13,9 @@
                    Style="{StaticResource ResourceKey=TxtDecoration}"
                    FontWeight="Bold" Margin="0,5,0,0"/>
             <StackPanel Margin="20,0,0,0">
-                <TextBlock Name="tblock1" Style="{StaticResource ResourceKey=TxtDecoration}" Text="{DynamicResource is_myIp}" MouseDown="TxtBlockCopyAPI_MouseDown"/>
-                <TextBlock Name="tblock2" Style="{StaticResource ResourceKey=TxtDecoration}" Text="{DynamicResource is_searchedIp}" MouseDown="TxtBlockCopyAPI_MouseDown">
-                    
-                </TextBlock>
+                <TextBlock Style="{StaticResource ResourceKey=TxtDecoration}" Text="{DynamicResource is_myIp}" MouseDown="TxtBlockCopyAPI_MouseDown"/>
+                <TextBlock Style="{StaticResource ResourceKey=TxtDecoration}" Text="{DynamicResource is_searchedIp1}" MouseDown="TxtBlockCopyAPI_MouseDown"/>
+                <TextBlock Style="{StaticResource ResourceKey=TxtDecoration}" Text="{DynamicResource is_searchedIp2}" MouseDown="TxtBlockCopyAPI_MouseDown"/>
             </StackPanel>
 
             <TextBlock Text="{DynamicResource ResourceKey=is_lbl_aboutProgram}" 

@@ -43,7 +43,6 @@
     <Style BasedOn="{StaticResource ResourceKey=BorderlessButton}" TargetType="Button" x:Key="ExitButtonStyle">
         <Setter Property="Margin" Value="370,0,0,0"/>
         <Setter Property="Padding" Value="0,0"/>
-
         <Style.Triggers>
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="Margin" Value="370,0,0,0"/>
@@ -70,28 +69,11 @@
         <Style.Setters>
             <Setter Property="Padding" Value="2,2"/>
             <Setter Property="Margin" Value="282,8,0,0"/>
-
         </Style.Setters>
         <Style.Triggers>
             <Trigger Property="IsPressed" Value="True">
-                <Setter Property="ContentTemplate">
-                    <Setter.Value>
-                        <DataTemplate>
-                            <Image Source="C:\Users\zekabobs\Desktop\Не трогать\icons\search2.png"/>
-                        </DataTemplate>
-                    </Setter.Value>
-                </Setter>
                 <Setter Property="Padding" Value="3,3"/>
                 <Setter Property="Margin" Value="282,8,0,0"/>
-            </Trigger>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="ContentTemplate">
-                    <Setter.Value>
-                        <DataTemplate>
-                            <Image Source="C:\Users\zekabobs\Desktop\Не трогать\icons\search2.png"/>
-                        </DataTemplate>
-                    </Setter.Value>
-                </Setter>
             </Trigger>
         </Style.Triggers>
     </Style>

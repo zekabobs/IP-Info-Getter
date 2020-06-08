@@ -41,6 +41,17 @@
                     <ComboBoxItem>русский</ComboBoxItem>
                     <ComboBoxItem>english</ComboBoxItem>
                 </ComboBox>
+                <TextBlock Margin="10,5,0,1" 
+                           Style="{StaticResource ResourceKey=TxtDecoration}"
+                           Text="{DynamicResource ms_checkAPI}"/>
+                <ComboBox Name="cboxCheckAPI"
+                          Style="{StaticResource ResourceKey=ComboBoxFlatStyle}"
+                          Margin="10,0,15,0" 
+                          FontFamily="Arial"
+                          FontSize="13">
+                    <ComboBoxItem>http://free.ipwhois.io</ComboBoxItem>
+                    <ComboBoxItem>http://ip-api.com</ComboBoxItem>
+                </ComboBox>
             </StackPanel>
             <TextBlock x:Name="lblFilesPath"
                    Style="{StaticResource ResourceKey=TxtDecoration}"

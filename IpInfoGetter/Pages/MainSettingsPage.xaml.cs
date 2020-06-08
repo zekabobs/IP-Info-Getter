@@ -3,17 +3,18 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 
+
 namespace IpInfoGetter.Pages
 {
     public partial class MainSettingsPage : Page 
     {
         
         public MainSettingsPage()
-        {
+        {   
             InitializeComponent();
             StartUp();
-            App.LanguageChanged += LanguageChanged;
 
+            App.LanguageChanged += LanguageChanged;
             CultureInfo currLang = App.Language;
 
             //Заполняем меню смены языка:
@@ -40,7 +41,6 @@ namespace IpInfoGetter.Pages
                 i.IsSelected = ci != null && ci.Equals(currLang);
             }
         }
-
         private void ChangeLanguageClick(Object sender, EventArgs e)
         {
             ComboBoxItem mi = sender as ComboBoxItem;
@@ -54,6 +54,7 @@ namespace IpInfoGetter.Pages
             }
 
         }
+
         private void BtnSelectPathClick(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
@@ -70,7 +71,8 @@ namespace IpInfoGetter.Pages
         private void StartUp()
         {
             StartupConfig.ReadParams();
-            langauge.SelectedItem = StartupConfig.language;
+
+            cboxCheckAPI.SelectedIndex = GlobalProp.Urls.IndexOf(StartupConfig.cboxCheckedAPI);
             lblFilesPath.Text = StartupConfig.LastFolder;
             isStartWithSystem.IsChecked = StartupConfig.isStartWithSystem;
             isSaveFiles.IsChecked = StartupConfig.isSaveFile;
@@ -78,9 +80,11 @@ namespace IpInfoGetter.Pages
         }
         private void Button_Save_Click(object sender, RoutedEventArgs e)
         {
+            ComboBoxItem i = (ComboBoxItem)cboxCheckAPI.SelectedItem;
+            
             StartupConfig.LastFolder = (string)lblFilesPath.Text;
-            StartupConfig.language = ((ComboBoxItem)(langauge.SelectedItem)).Content.ToString();
-            StartupConfig.isShowTime = Convert.ToBoolean(isShowTime.IsChecked);
+            StartupConfig.cboxCheckedAPI = (string)i.Content;
+            StartupConfig.isShowTime = Convert.ToBoolean(isShowTime.IsChecked);           
             if ((bool)isStartWithSystem.IsChecked != StartupConfig.isStartWithSystem)
                 StartupConfig.SetAutoload((bool)isStartWithSystem.IsChecked);
             StartupConfig.isStartWithSystem = Convert.ToBoolean(isStartWithSystem.IsChecked);

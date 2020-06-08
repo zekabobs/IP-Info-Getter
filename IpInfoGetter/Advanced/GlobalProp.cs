@@ -1,4 +1,4 @@
-﻿
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -6,51 +6,83 @@ namespace IpInfoGetter
 {
     static class GlobalProp
     {
-        static public string IpUrl {get; } =  $"http://free.ipwhois.io/json/{Ip_address}?Lang={Lang}";
+        public static List<string> Urls { get; } = new List<string>()
+        {
+            "http://free.ipwhois.io",
+            "http://ip-api.com",
+        };
+        static public string FileMark
+        {
+            get
+            {
+                if (StartupConfig.cboxCheckedAPI == Urls[0])
+                    return "ipwhois";
+                else if (StartupConfig.cboxCheckedAPI == Urls[1])
+                    return "ipapi";
+                else return "none";
+            }
+        }
+        static public string LongUrl
+        {
+            get
+            {
+               return StartupConfig.cboxCheckedAPI + $"/json/{Ip_address}";
+            }
+        }
         static public string Ip_address { get; set; } = "";
-        static public string Lang { get; set; } = "";
-        static public bool IsJsonExist()
+        static public bool IsFileExist()
         {
             try
             {
-                if (File.Exists(StartupConfig.LastFolder + $"\\json\\{Ip_address}.json"))
+                if (File.Exists(StartupConfig.LastFolder + $"\\Saved\\{Ip_address}.json"))
+                {
                     return true;
+                }
             }
             catch { }
             return false;
         }
-        static public string GetJsonFileLocal()
+        static public string[] GetFileLocal()
         {
-            using (StreamReader reader = new StreamReader(StartupConfig.LastFolder + $"\\json\\{Ip_address}.json"))
+            using (StreamReader reader = new StreamReader(StartupConfig.LastFolder + $"\\Saved\\{Ip_address}.$json"))
             {
-                return reader.ReadToEnd();
+                return new string[] { reader.ReadLine(), reader.ReadToEnd() };
             }
         }
-        static async public void SaveJsonFile(string ip, string json)
+        static async public void SaveFileAsync(string ip, string data)
         {
             if(StartupConfig.isSaveFile)
                 await Task.Factory.StartNew(() =>
                 {
-                    if (!Directory.Exists(StartupConfig.LastFolder + $"\\json\\"))
-                        Directory.CreateDirectory(StartupConfig.LastFolder + $"\\json\\");
-                    using (StreamWriter writer = new StreamWriter(StartupConfig.LastFolder + $"\\json\\{ip}.json"))
+                    if (!Directory.Exists(StartupConfig.LastFolder + $"\\Saved\\"))
+                        Directory.CreateDirectory(StartupConfig.LastFolder + $"\\Saved\\");
+                    using (StreamWriter writer = new StreamWriter(StartupConfig.LastFolder + $"\\Saved\\{ip}.json"))
                     {
-                        writer.Write(json);
+                        writer.WriteLine(FileMark);
+                        writer.Write(data);
                     }
                 });
         }
-        static public string GetJsonByFileName(string path)
+        static public string[] GetByFileName(string path)
         {
             try {
                 if (path == string.Empty)
                     throw new System.Exception();
-                using (StreamReader reader = new StreamReader($"{path}"))
+                using (StreamReader reader = new StreamReader(path))
                 {
-                    return reader.ReadToEnd();
+                    return new string[] { reader.ReadLine(), reader.ReadToEnd() };
                 }
             }
             catch
-            { System.Windows.Forms.MessageBox.Show("Неверный файл"); return ""; }
+            {
+                System.Windows.Forms.MessageBox.Show("Incorrert file");
+                return null;
+            }
         }
+        static private bool FileExists()
+        {
+            return false;
+        }
+
     }
 }

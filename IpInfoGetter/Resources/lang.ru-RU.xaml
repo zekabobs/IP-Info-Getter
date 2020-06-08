@@ -10,12 +10,14 @@
     <v:String x:Key="ms_saveRequestFiles">Сохранять файлы запросов</v:String>
     <v:String x:Key="ms_btnPath">Путь</v:String>
     <v:String x:Key="ms_btnSaveSettings">Сохранить</v:String>
+    <v:String x:Key="ms_checkAPI">Выбрать API</v:String>
     <v:String x:Key="s_btnGeneral">Общее</v:String>
     <v:String x:Key="s_btnInformation">Информация</v:String>
     <v:String x:Key="s_btnExit">Выход</v:String>
     <v:String x:Key="is_lbl_API">Используемые сторонние API:</v:String>
     <v:String x:Key="is_myIp">Узнать мой IP - https://api.ipify.org</v:String>
-    <v:String x:Key="is_searchedIp">Узнать информацию об IP - http://free.ipwhois.io</v:String>
+    <v:String x:Key="is_searchedIp1">Узнать информацию об IP - http://free.ipwhois.io</v:String>
+    <v:String x:Key="is_searchedIp2">Узнать информацию об IP - http://ip-api.com</v:String>
     <v:String x:Key="is_lbl_aboutProgram">О программе:</v:String>
     <v:String x:Key="is_aboutProgram">Приложение не является коммерческим. Основная цель этой программы - получить основную информацию об IPv4-адресе. Любая модификация кода ложится на вашу ответственность. Примечание: права администратора нужны для доступа к автозапуску.</v:String>
     <v:String x:Key="is_lbl_callback">Обратная связь:</v:String>

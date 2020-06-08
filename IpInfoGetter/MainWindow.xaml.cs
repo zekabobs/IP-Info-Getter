@@ -1,13 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using IpInfoGetter.Advanced;
+using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Xml.Serialization;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Input;
+using System.Diagnostics;
 
 namespace IpInfoGetter
 {
@@ -16,10 +19,6 @@ namespace IpInfoGetter
         public MainWindow()
         { 
             StartupConfig.ReadParams();
-            if (!(StartupConfig.isShowTime))
-            {
-                //tBlockTime.Visibility = Visibility.Collapsed ;
-            }
             InitializeComponent();
         }
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
@@ -28,25 +27,24 @@ namespace IpInfoGetter
         }  
         private void BtnMoreClick(object sender,RoutedEventArgs e)
         {
-            string ipInfo = "";
+            string[] ipInfo = null;
             string fileName = "";
             OpenFileDialog fileDialog = new OpenFileDialog
             {
                 Filter = "json (*.json)|*.json|All files (*.*)|*.*",
                 Title = "Select file",
-                
             };
             if(fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                if (Regex.IsMatch(fileDialog.FileName, @"\w?.json"))
+                if (Regex.IsMatch(fileDialog.SafeFileName, @"w?.json") || Regex.IsMatch(fileDialog.SafeFileName, @"w?.xml"))
                 {
-                    fileName = fileDialog.FileName.Substring(fileDialog.FileName.LastIndexOf("\\")+1);
-                    ipInfo = GlobalProp.GetJsonByFileName(fileDialog.FileName);
+                    fileName = fileDialog.SafeFileName;
+                    ipInfo = GlobalProp.GetByFileName(fileDialog.FileName);
                 }
             }
-            if (ipInfo != string.Empty)
+            if (ipInfo != null)
             {
-                if (GetInformation(ipInfo))
+                if (GetInformation(ipInfo[1],ipInfo[0]))
                 {
                     Regex rx = new Regex(@"([0-9]{1,3}[\.]){3}[0-9]{1,3}");
                     Match match = rx.Match(fileName);
@@ -64,11 +62,11 @@ namespace IpInfoGetter
         {
             GoSearch();
         }
-        async private void BtnMyIPClick(object sender, RoutedEventArgs e)
+        async private void BtnMyIPClickAsync(object sender, RoutedEventArgs e)
         {
             try
             {
-                GlobalProp.Ip_address = await Task.Factory.StartNew(() =>  new WebClient().DownloadString(new Uri("https://api.ipify.org")));
+                GlobalProp.Ip_address = await Task.Factory.StartNew(() =>  new WebClient().DownloadString(new Uri("https://api.ipify.org/")));
                 sourceTbox.Text = GlobalProp.Ip_address;
             }
             catch (WebException)
@@ -99,26 +97,35 @@ namespace IpInfoGetter
             if (IsCorrectIp(sourceTbox.Text))
             {
                 GlobalProp.Ip_address = sourceTbox.Text;
-                Start();
+                StartAsync();
             }
             else
                 sourceTbox.Text = string.Empty;
         }
-        async private void Start()
+        async private void StartAsync()
         {
-            string json = GlobalProp.IsJsonExist() ? await Task.Factory.StartNew(() => GlobalProp.GetJsonFileLocal()) : await Task.Factory.StartNew(() => GetJsonNet());
-            if (!(json == string.Empty))
+            string[] file = GlobalProp.IsFileExist() ? await Task.Factory.StartNew(() => GlobalProp.GetFileLocal()) : await Task.Factory.StartNew(() => GetInfoByNet());
+            if (!(file == null))
             {
-                GetInformation(json);
+                GetInformation(file[0], file[1]);
             }
         }
-        private bool GetInformation(string json)
+        private bool GetInformation(string file, string mark)
         {
             try
             {
-                IpInfo ip_info_json = JsonConvert.DeserializeObject<IpInfo>(json);
-                ip_info_json.SetOptions();
-                information_list.ItemsSource = ip_info_json.information;
+                if (mark == "ipwhois")
+                {
+                    IpWhoIS ipWhoIs = JsonConvert.DeserializeObject<IpWhoIS>(file);
+                    ipWhoIs.SetOptions();
+                    information_list.ItemsSource = ipWhoIs.information;
+                }
+                else if (mark == "ipapi")
+                {
+                    Ip_API ip_api = JsonConvert.DeserializeObject<Ip_API>(file);
+                    ip_api.SetOptions();
+                    information_list.ItemsSource = ip_api.information;
+                }                                
                 return true;
             }
             catch (WebException)
@@ -131,10 +138,14 @@ namespace IpInfoGetter
             }
             return false;
         }
-        private string GetJsonNet()
+        private string[] GetInfoByNet()
         {
-            string url = $"http://free.ipwhois.io/json/{GlobalProp.Ip_address}?Lang={GlobalProp.Lang}";
-            string json = "";
+            string url;
+            if (StartupConfig.cboxCheckedAPI == null)
+                url = $"https://free.ipwhois.io/json/{GlobalProp.Ip_address}";
+            else
+                url = GlobalProp.LongUrl;
+            string file = "";
             WebRequest request = WebRequest.Create(url);
             try
             {
@@ -144,18 +155,18 @@ namespace IpInfoGetter
                     {
                         using (StreamReader reader = new StreamReader(stream))
                         {
-                            json = reader.ReadToEnd();
+                            file = reader.ReadToEnd();
                         }
                     }
                 }
                 if(StartupConfig.isSaveFile)
-                    GlobalProp.SaveJsonFile(GlobalProp.Ip_address, json);
-                return json;
+                    GlobalProp.SaveFileAsync(GlobalProp.Ip_address, file);
+                return new string[] { file, GlobalProp.FileMark };
             }
             catch (WebException)
             {
                 System.Windows.Forms.MessageBox.Show("Error connection","Error");
-                return json;
+                return null;
             }
         }
         private bool IsCorrectIp(string ip)

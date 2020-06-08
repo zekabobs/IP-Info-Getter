@@ -10,12 +10,14 @@
     <v:String x:Key="ms_saveRequestFiles">Save request files</v:String>
     <v:String x:Key="ms_btnPath">Path</v:String>
     <v:String x:Key="ms_btnSaveSettings">Save</v:String>
+    <v:String x:Key="ms_checkAPI">Select API</v:String>
     <v:String x:Key="s_btnGeneral">General</v:String>
     <v:String x:Key="s_btnInformation">Inforamtion</v:String>
     <v:String x:Key="s_btnExit">Exit</v:String>
     <v:String x:Key="is_lbl_API">Useable third-party APIs:</v:String>
     <v:String x:Key="is_myIp">Service for search my ip info - https://api.ipify.org</v:String>
-    <v:String x:Key="is_searchedIp">Service for search ip info - http://free.ipwhois.io</v:String>
+    <v:String x:Key="is_searchedIp1">Service for search ip info - http://free.ipwhois.io</v:String>
+    <v:String x:Key="is_searchedIp2">Service for search ip info - http://ip-api.com</v:String>
     <v:String x:Key="is_lbl_aboutProgram">About the programs:</v:String>
     <v:String x:Key="is_aboutProgram">The application is not commercial. The main objective of this program is to obtain basic information about the IPv4 address. Any modification of the code is solely your responsibility. Note: You must have administrator rights to access autorun.</v:String>
     <v:String x:Key="is_lbl_callback">Feedback:</v:String>
