@@ -1,3 +1,4 @@
 # Ip Info Getter
  WPF Program. Тhe program seeks general information information about IPv4-address.
-Program use free services. 
+Program use free services.
+<<<In "Debug" folder finally .exe file.
